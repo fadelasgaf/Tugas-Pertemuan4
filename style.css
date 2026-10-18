@@ -1,0 +1,586 @@
+/* =========================
+   1. PENGATURAN DASAR
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 1.65;
+    color: #293b50;
+    background-color: #f4f7fb;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    scroll-margin-top: 70px;
+}
+
+/* =========================
+   2. NAVBAR
+========================= */
+
+.navbar {
+    min-height: 60px;
+    padding: 11px 7%;
+    background-color: #16365d;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.logo-icon {
+    font-size: 23px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 21px;
+}
+
+.nav-menu a {
+    color: #edf5ff;
+    font-size: 11px;
+    padding: 6px 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: #9ed0ff;
+    border-bottom-color: #76baff;
+}
+
+/* =========================
+   3. BANNER UTAMA
+========================= */
+
+.hero {
+    min-height: 315px;
+    padding: 42px 9%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    color: white;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(18, 67, 125, 0.92),
+            rgba(24, 105, 180, 0.62),
+            rgba(20, 89, 160, 0.12)
+        ),
+        url("images/banner.jpeg");
+
+    background-size: cover;
+    background-position: center 55%;
+    background-repeat: no-repeat;
+}
+
+.hero-content {
+    max-width: 465px;
+}
+
+.hero-label {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #d6eaff;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(28px, 4vw, 41px);
+    line-height: 1.22;
+    margin-bottom: 13px;
+}
+
+.hero p {
+    max-width: 350px;
+    font-size: 12px;
+    margin-bottom: 22px;
+    color: #f0f6ff;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 17px;
+    border-radius: 6px;
+    background-color: #f5f9ff;
+    color: #174c86;
+    font-size: 11px;
+    font-weight: bold;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.button:hover {
+    background-color: #dcecff;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   4. PROFIL KAMPUS
+========================= */
+
+.about-section {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 26px;
+    align-items: stretch;
+    padding: 28px 8%;
+    background-color: #fff;
+}
+
+.section-label {
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #3982c8;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.about-text h2 {
+    color: #16365d;
+    font-size: 22px;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.about-text p {
+    color: #596a7e;
+    font-size: 11px;
+    text-align: justify;
+    margin-bottom: 12px;
+}
+
+/* =========================
+   5. KARTU INFORMASI
+========================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.card {
+    padding: 17px;
+    border: 1px solid #dce8f6;
+    border-radius: 12px;
+    background-color: #f2f7ff;
+    box-shadow: 0 4px 13px rgba(25, 62, 105, 0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 18px rgba(25, 62, 105, 0.11);
+}
+
+.green-card {
+    background-color: #eff9f5;
+    border-color: #d8eee5;
+}
+
+.card-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 43px;
+    height: 43px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    background-color: #dceaff;
+    font-size: 21px;
+}
+
+.green-card .card-icon {
+    background-color: #d7f1e6;
+}
+
+.card h3 {
+    color: #16365d;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: #596a7e;
+    font-size: 10px;
+    margin-bottom: 15px;
+}
+
+.card-button {
+    display: inline-block;
+    padding: 6px 9px;
+    border: 1px solid #6ba0d8;
+    border-radius: 5px;
+    color: #2164a3;
+    font-size: 10px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.green-card .card-button {
+    border-color: #6bbba3;
+    color: #187660;
+}
+
+.card-button:hover {
+    background-color: #dfedff;
+}
+
+.green-card .card-button:hover {
+    background-color: #dcf5eb;
+}
+
+/* =========================
+   6. TABEL DAN FORMULIR
+========================= */
+
+.academic-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 21px;
+    padding: 28px 8%;
+    background-color: #edf3fa;
+}
+
+.panel {
+    min-width: 0;
+    padding: 18px;
+    background-color: #fff;
+    border: 1px solid #e0e8f2;
+    border-radius: 11px;
+    box-shadow: 0 4px 13px rgba(25, 62, 105, 0.05);
+}
+
+.panel-title {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    margin-bottom: 16px;
+}
+
+.panel-icon {
+    font-size: 21px;
+}
+
+.panel-title h2 {
+    color: #16365d;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.panel-title p {
+    color: #718095;
+    font-size: 10px;
+}
+
+/* =========================
+   7. TABEL AKADEMIK
+========================= */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 10px;
+}
+
+thead {
+    background-color: #1d4777;
+    color: #fff;
+}
+
+th,
+td {
+    padding: 9px 7px;
+    border: 1px solid #dce5ef;
+}
+
+th {
+    white-space: nowrap;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f0f5fb;
+}
+
+tbody tr:hover {
+    background-color: #e1edfc;
+}
+
+.table-note {
+    margin-top: 9px;
+    color: #7a8797;
+    font-size: 9px;
+    font-style: italic;
+}
+
+/* =========================
+   8. FORMULIR PENDAFTARAN
+========================= */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.form-group {
+    min-width: 0;
+    margin-bottom: 12px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #354960;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    display: block;
+    width: 100%;
+    padding: 9px;
+    border: 1px solid #d6e0ec;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #293b50;
+    font-family: inherit;
+    font-size: 11px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4b91d7;
+    box-shadow: 0 0 0 3px rgba(75, 145, 215, 0.14);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 65px;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 11px;
+    border: none;
+    border-radius: 6px;
+    background-color: #1d69b5;
+    color: white;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.submit-button:hover {
+    background-color: #154d88;
+}
+
+#formMessage {
+    margin-top: 10px;
+    color: #17683a;
+    font-size: 11px;
+}
+
+/* =========================
+   9. FOOTER
+========================= */
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px 8%;
+    background-color: #16365d;
+    color: #fff;
+}
+
+.footer-logo {
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.address,
+.copyright {
+    color: #dce8f6;
+    font-size: 9px;
+}
+
+.social-links {
+    display: flex;
+    gap: 11px;
+    align-items: center;
+}
+
+.social-links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 27px;
+    height: 27px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.social-links a:hover {
+    background-color: #2d5e92;
+}
+
+.copyright {
+    width: 100%;
+    text-align: right;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 10px;
+}
+
+/* =========================
+   10. TAMPILAN TABLET
+========================= */
+
+@media (max-width: 900px) {
+    .navbar {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .nav-menu {
+        gap: 12px;
+    }
+
+    .about-section,
+    .academic-section {
+        padding-left: 4%;
+        padding-right: 4%;
+        gap: 15px;
+    }
+
+    .panel {
+        padding: 13px;
+    }
+
+    th,
+    td {
+        padding: 7px 5px;
+    }
+}
+
+/* =========================
+   11. TAMPILAN HP
+========================= */
+
+@media (max-width: 650px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 14px 5%;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 14px;
+    }
+
+    .nav-menu a {
+        font-size: 10px;
+    }
+
+    .hero {
+        min-height: 270px;
+        padding: 35px 7%;
+        background-position: center;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .about-section,
+    .academic-section {
+        grid-template-columns: 1fr;
+        padding: 23px 5%;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 22px 5%;
+    }
+
+    .copyright {
+        text-align: left;
+    }
+}
+
+/* =========================
+   12. HP KECIL
+========================= */
+
+@media (max-width: 380px) {
+    .cards,
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    .nav-menu {
+        gap: 8px 12px;
+    }
+}
